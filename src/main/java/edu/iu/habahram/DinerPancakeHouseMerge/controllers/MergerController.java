@@ -43,7 +43,7 @@ public class MergerController {
 
         Iterator<MenuItem> cafeItems = cafeRepository.getTheMenuIterator();
         while(cafeItems.hasNext()) {
-            menuItems.add(breakfastItems.next());
+            menuItems.add(cafeItems.next());
         }
         return menuItems;
     }
