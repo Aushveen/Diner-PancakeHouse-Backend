@@ -2,6 +2,7 @@ package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Menu extends MenuComponent{
@@ -41,5 +42,10 @@ public class Menu extends MenuComponent{
             items.addAll(Arrays.asList(componentItems));
         }
         return items.toArray(new MenuItem[0]);
+    }
+
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
     }
 }
